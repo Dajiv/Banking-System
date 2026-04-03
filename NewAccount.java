@@ -1,13 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 
-class new_acc extends JFrame{
+class NewAccount extends JFrame{
  JPanel jP1,jP2,jP3;
  JTextField jT1,jT2,jT3,jT4;
  JComboBox jCB1;
  JButton jB1;
 
-    new_acc(){
+    NewAccount(){
      setSize(250,300);
      setLayout(new BorderLayout());
      toolset();

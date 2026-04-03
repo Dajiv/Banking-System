@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Existing_acc extends JFrame{
+public class ExistingAccount extends JFrame{
  JPanel jP1,jP2,bgL,jP3;
  JTextField jT1,jT2,jT3,jT4;
  JRadioButton jR1,jR2;
  ButtonGroup bg;
  JButton jB1;
 
-    Existing_acc(){
+    ExistingAccount(){
       setSize(400,300);
       setLayout(new BorderLayout());
       toolset();

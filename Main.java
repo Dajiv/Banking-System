@@ -1,6 +1,6 @@
-public class mainfile{
+public class Main{
     public static void main(String[] args) {
-        new Staff_login();
+        new Login();
         
     }
 }

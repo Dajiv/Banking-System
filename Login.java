@@ -2,14 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Staff_login extends JFrame{
+public class Login extends JFrame{
   JPanel jP1,jP2,jP3;
   JTextField jT1,jT2;
   JPasswordField jPF1;
   JButton jB1,jB2;
   
 
-    Staff_login(){
+    Login(){
       setSize(300, 250);
       setLayout(new BorderLayout());
 
@@ -66,7 +66,7 @@ public class Staff_login extends JFrame{
 
         if(Enterd_ID.equals(Staff_ID[i]) && stored_Password.equals(pass) && Enterd_NIC.equals(NIC_crt[i])){
           this.dispose();
-          new account();
+          new Account();
           
         }
         

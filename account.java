@@ -1,11 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 
-class account extends JFrame{
+class Account extends JFrame{
   JPanel jP1;
   JButton jB1,jB2;
 
-    account(){
+    Account(){
        setSize(250,300);
        setLayout(new BorderLayout());
        toolset();
@@ -22,12 +22,12 @@ class account extends JFrame{
         
         jB1.addActionListener(b1->{
             this.dispose();
-            new new_acc();
+            new NewAccount();
         });
 
         jB2.addActionListener(b2->{
             this.dispose();
-            new Existing_acc();
+            new ExistingAccount();
         });
     }
 }

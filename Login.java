@@ -1,15 +1,21 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.awt.event.*;
+import com.formdev.flatlaf.FlatDarkLaf;
 
 public class Login extends JFrame{
   JPanel jP1,jP2,jP3;
+  JLabel jL1;
   JTextField jT1,jT2;
   JPasswordField jPF1;
   JButton jB1,jB2;
   
 
     Login(){
+      FlatDarkLaf.setup();
       setSize(300, 250);
       setLayout(new BorderLayout());
 
@@ -25,23 +31,47 @@ public class Login extends JFrame{
 
     public void toolset(){
 
-     jP1 = new JPanel(); jP1.setBackground(Color.CYAN);
-     jP2 = new JPanel(); jP2.setBackground(Color.CYAN);
-     jP3 = new JPanel(); jP3.setBackground(Color.CYAN);
+     jP1 = new JPanel(); jP1.setBackground(new Color(30,30,40));
+     jP2 = new JPanel(); jP2.setBackground(new Color(30,30,40));
+     jP3 = new JPanel(); jP3.setBackground(new Color(30,30,40));
 
-     jP1.add(new JLabel("Staff Login Form"));
+     jP1.add(jL1 = new JLabel("Staff Login Form"));
+     jL1.setFont(new Font("Segoe UI",Font.BOLD,20));
+     jL1.setForeground(new Color(100,180,255));
      
      jP2.setLayout(new GridLayout(3,2,10,10));
 
      jP2.add(new JLabel(" Staff ID"));
      jP2.add(jT1 = new JTextField());
+     
+
      jP2.add(new JLabel(" Password"));
      jP2.add(jPF1 = new JPasswordField());
+     
+
      jP2.add(new JLabel(" NIC Number"));
      jP2.add(jT2 = new JTextField());
+     
+     jT1.setBorder(new LineBorder(Color.WHITE,2));
+     jPF1.setBorder(new LineBorder(Color.WHITE,2));
+     jT2.setBorder(new LineBorder(Color.WHITE,2));
 
-     jP3.add(jB1 = new JButton("SUBMIT")); jB1.setBackground(Color.GREEN);
-     jP3.add(jB2 = new JButton("CLEAR")); jB2.setBackground(Color.RED);
+  
+     jP3.add(jB1 = new JButton("SUBMIT")); 
+     jB1.setBackground(new Color(46,204,113));
+     jB1.setForeground(Color.WHITE);
+     jB1.setFont(new Font("Segoe UI", Font.BOLD, 14));
+     jB1.setFocusPainted(false);
+     jB1.setBorderPainted(false);
+     jB1.putClientProperty("JButton.buttonType", "roundRect");
+
+     jP3.add(jB2 = new JButton("CLEAR")); 
+     jB2.setBackground(new Color(231,76,60));
+     jB2.setForeground(Color.WHITE);
+     jB2.setFont(new Font("Segoe UI", Font.BOLD, 14));
+     jB2.setFocusPainted(false);
+     jB2.setBorderPainted(false);
+     jB2.putClientProperty("JButton.buttonType", "roundRect");
 
      String[] Staff_ID = {"111","222","333"};
      String[] NIC_crt = {"200701900902","200801900902","200901900902"};

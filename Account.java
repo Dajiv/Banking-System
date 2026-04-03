@@ -15,11 +15,16 @@ class Account extends JFrame{
        setVisible(true);
     }
     public void toolset(){
-        jP1 = new JPanel(); jP1.setBackground(Color.CYAN);
+        jP1 = new JPanel(); 
         jP1.setLayout(new GridLayout(2,0,10,10));
-        jP1.add(jB1 = new JButton("New account")); jB1.setBackground(Color.GREEN);
-        jP1.add(jB2 = new JButton("Existing account")); jB2.setBackground(Color.GREEN);
-        
+        jP1.add(jB1 = new JButton("New account")); 
+        jB1.setBackground(new Color(46,204,113));
+        jB1.setForeground(Color.WHITE);
+
+        jP1.add(jB2 = new JButton("Existing account"));
+        jB2.setBackground(new Color(46,204,113));
+        jB2.setForeground(Color.WHITE);
+
         jB1.addActionListener(b1->{
             this.dispose();
             new NewAccount();

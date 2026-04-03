@@ -1,4 +1,6 @@
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.beans.JavaBean;
 
@@ -41,8 +43,20 @@ class NewAccount extends JFrame{
       jP2.add(new JLabel("Account Type"));
       jP2.add(jCB1 = new JComboBox<>(acc_type));
 
+      jT1.setBorder(new LineBorder(Color.WHITE,2));
+      jT2.setBorder(new LineBorder(Color.WHITE,2));
+      jT3.setBorder(new LineBorder(Color.WHITE,2));
+      jT4.setBorder(new LineBorder(Color.WHITE,2));
+      jCB1.setBorder(new LineBorder(Color.WHITE,2));
+  
       jP3.add(jB1 = new JButton("SUBMIT"));
-      jP3.add(jB2 = new JButton("EXIT")); jB2.setBackground(Color.RED);
+      jB1.setBackground(new Color(46,204,113));
+      jB1.setForeground(Color.WHITE);
+
+      
+      jP3.add(jB2 = new JButton("EXIT")); 
+      jB2.setBackground(new Color(231,76,60));
+      jB2.setForeground(Color.WHITE);
 
       jB1.addActionListener(jB1->{
 

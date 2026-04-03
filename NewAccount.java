@@ -1,11 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.beans.JavaBean;
 
 class NewAccount extends JFrame{
  JPanel jP1,jP2,jP3;
  JTextField jT1,jT2,jT3,jT4;
  JComboBox jCB1;
- JButton jB1;
+ JButton jB1,jB2;
 
     NewAccount(){
      setSize(250,300);
@@ -41,6 +42,8 @@ class NewAccount extends JFrame{
       jP2.add(jCB1 = new JComboBox<>(acc_type));
 
       jP3.add(jB1 = new JButton("SUBMIT"));
+      jP3.add(jB2 = new JButton("EXIT")); jB2.setBackground(Color.RED);
+
       jB1.addActionListener(jB1->{
 
         String Holder_Name = jT1.getText();
@@ -50,6 +53,12 @@ class NewAccount extends JFrame{
         String account_type = (String) jCB1.getSelectedItem();
 
         JOptionPane.showMessageDialog(null, Holder_Name+"\n"+Postal_Address+"\n"+ Phone_Number+"\n"+NIC+"\n"+account_type);
+      });
+
+      jB2.addActionListener(jB2->{
+        this.dispose();
+        new Account();
+
       });
     }
 }

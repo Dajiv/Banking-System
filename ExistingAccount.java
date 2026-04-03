@@ -7,7 +7,7 @@ public class ExistingAccount extends JFrame{
  JTextField jT1,jT2,jT3,jT4;
  JRadioButton jR1,jR2;
  ButtonGroup bg;
- JButton jB1;
+ JButton jB1,jB2;
 
     ExistingAccount(){
       setSize(400,300);
@@ -51,6 +51,7 @@ public class ExistingAccount extends JFrame{
       jP2.add(new JLabel("Amount"));
       jP2.add(jT4 = new JTextField());
       jP3.add(jB1 = new JButton("SUBMIT"));  jB1.setBackground(Color.GREEN);
+      jP3.add(jB2 = new JButton("EXIT")); jB2.setBackground(Color.RED);
 
       String[] Staff_ID = {"111","222","333"};
       String[] Acc_No = {"1111111111","222222222","3333333333"};
@@ -58,7 +59,7 @@ public class ExistingAccount extends JFrame{
 
       int size = Staff_ID.length;
 
-      jB1.addActionListener(e->{
+      jB1.addActionListener(jB1->{
         
         String Enterd_ID = jT1.getText(); 
         String Enterd_No = jT2.getText();
@@ -83,6 +84,11 @@ public class ExistingAccount extends JFrame{
         
        i=i+1;
        }
+      });
+
+      jB2.addActionListener(jB2->{
+        this.dispose();
+        new Account();
       });
       
     

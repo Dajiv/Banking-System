@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 
 import java.awt.*;
-import java.beans.JavaBean;
+
 
 class NewAccount extends JFrame{
  JPanel jP1,jP2,jP3;

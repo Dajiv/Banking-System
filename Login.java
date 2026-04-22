@@ -4,7 +4,11 @@ import javax.swing.border.LineBorder;
 
 import java.awt.*;
 import java.awt.event.*;
-import com.formdev.flatlaf.FlatDarkLaf;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
 
 public class Login extends JFrame{
   JPanel jP1,jP2,jP3;
@@ -15,7 +19,6 @@ public class Login extends JFrame{
   
 
     Login(){
-      FlatDarkLaf.setup();
       setSize(300, 250);
       setLayout(new BorderLayout());
 
@@ -88,6 +91,30 @@ public class Login extends JFrame{
        char[] Entered_Password = jPF1.getPassword();
        String stored_Password = new String(Entered_Password);
        String Enterd_NIC = jT2.getText(); 
+
+
+       try{
+         Connection con = DriverManager.getConnection(
+          "jdbc:mysql://localhost:3306/staff_logindb",
+          "root",
+          "Ud1902!"
+        );
+
+          String query = "Insert into staff(staff_ID,Password,NIC) values(?,?,?)";
+          PreparedStatement ps = con.prepareStatement(query);
+
+          ps.setString(1,Enterd_ID);
+          ps.setString(2,stored_Password);
+          ps.setString(3,Enterd_NIC);
+
+          ps.executeUpdate();
+          System.out.println("Success!");
+          con.close();
+
+       }
+        catch(Exception e){
+          System.out.println(e);
+        }
       
        int i=0;
        
@@ -107,7 +134,7 @@ public class Login extends JFrame{
 
      jB2.addActionListener(clear->{
         jT1.setText(" ");
-        jPF1.setText("");
+        jPF1.setText(" ");
         jT2.setText(" ");
      });
 

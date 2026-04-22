@@ -16,6 +16,7 @@ class Account extends JFrame{
     }
     public void toolset(){
         jP1 = new JPanel(); 
+        jP1.setBackground(Color.BLACK);
         jP1.setLayout(new GridLayout(2,0,10,10));
         jP1.add(jB1 = new JButton("New account")); 
         jB1.setBackground(new Color(46,204,113));
